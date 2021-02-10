@@ -12,15 +12,14 @@ export class SystemService {
     this.login.username = username;
     this.login.password = password;
   }
-
-  getLogin() {
+ getLogin() {
     return this.login;
   }
 
-  save(): any {
+  save(login): any {
     
     console.log('Request Object: ')
-    console.log(this.login);
-    return this.http.post<any>('http://127.0.0.1:8080', this.login);
+    console.log(login);
+    return this.http.post<any>('http://127.0.0.1:8080', login);
   }
 }
