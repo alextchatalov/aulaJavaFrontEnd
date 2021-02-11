@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SystemService } from '../system.service'
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-login',
@@ -38,7 +37,7 @@ export class LoginComponent implements OnInit {
       (response) => {                           //Next callback
         console.warn(response);
         alert(response.message);
-        this.router.navigateByUrl('/register');
+        this.router.navigateByUrl('/home');
       },
       (error) => {                              //Error callback
         console.error('error caught in component');
@@ -47,5 +46,8 @@ export class LoginComponent implements OnInit {
         //throw error;   //You can also throw the error to a global error handler
       }
     );
+  }
+  register() {  
+    this.router.navigateByUrl('/register');
   }
 }

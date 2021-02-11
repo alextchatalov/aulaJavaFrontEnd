@@ -23,4 +23,11 @@ export class SystemService {
     console.log(login);
     return this.http.post<any>('http://127.0.0.1:8080', login);
   }
+
+  register(register): Observable<any> {
+    
+    console.log('Request Object: ')
+    console.log(register);
+    return this.http.post<any>('http://127.0.0.1:8080/register', register);
+  }
 }
