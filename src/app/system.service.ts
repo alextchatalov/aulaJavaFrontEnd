@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class SystemService {
     return this.login;
   }
 
-  save(login): any {
+  save(login): Observable<any> {
     
     console.log('Request Object: ')
     console.log(login);

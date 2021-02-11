@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SystemService } from '../system.service'
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';;
+import { Router } from '@angular/router';
+import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-login',
@@ -31,9 +32,20 @@ export class LoginComponent implements OnInit {
   }
     login.username = this.formGroup.value.username;
     login.password = this.formGroup.value.password;
-    
-    this.systemService.save(login).subscribe(data => {
-      this.router.navigateByUrl('/redirectbb');
-    });
+
+    this.systemService.save(login).subscribe(
+
+      (response) => {                           //Next callback
+        console.warn(response);
+        alert(response.message);
+        this.router.navigateByUrl('/register');
+      },
+      (error) => {                              //Error callback
+        console.error('error caught in component');
+        console.error(error.error.message);
+        alert(error.error.message);
+        //throw error;   //You can also throw the error to a global error handler
+      }
+    );
   }
 }
