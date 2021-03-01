@@ -30,4 +30,7 @@ export class SystemService {
     console.log(register);
     return this.http.post<any>('http://127.0.0.1:8080/register', register);
   }
+  getUsuarios(): Observable<any> {
+    return this.http.get<any>('http://127.0.0.1:8080/usuarios');
+  }
 }

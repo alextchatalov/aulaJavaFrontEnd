@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aulaJavaFrontEnd';
+  constructor(private router: Router) {
+
+  }
+  usuarios() {
+    this.router.navigateByUrl('/usuarios');
+   }
+
+   livros() {
+    this.router.navigateByUrl('/livros');
+   }
+
+   home() {
+    this.router.navigateByUrl('/home');
+   }
 }

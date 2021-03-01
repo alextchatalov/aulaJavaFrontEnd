@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SystemService } from '../system.service'
 import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn } from '@angular/forms';
-import { Router } from '@angular/router';
+
 
 
 export interface PeriodicElement {
