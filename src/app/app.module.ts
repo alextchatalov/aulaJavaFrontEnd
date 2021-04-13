@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import { MatTableModule } from '@angular/material/table';
-import { UsuariosComponent } from './usuarios/usuarios.component'
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { LivroComponent } from './livro/livro.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component'
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    LivroComponent
   ],
   imports: [
     BrowserModule,
