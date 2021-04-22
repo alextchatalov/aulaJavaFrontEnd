@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SystemService } from '../system.service'
-import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn } from '@angular/forms';
-
+import { UsuarioLogado } from '../model/usuarioLogado';
 
 
 export interface PeriodicElement {
@@ -29,7 +27,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  usuario = UsuarioLogado.nome;
   displayedColumns: string[] = ['position', 'username', 'password'];
   dataSource = ELEMENT_DATA;
 

@@ -1,3 +1,9 @@
 table{
     width: 100%;
-   }
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 15px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}

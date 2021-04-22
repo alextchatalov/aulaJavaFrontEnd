@@ -32,20 +32,32 @@
             The actual rendered columns are set as a property on the row definition" -->
         <!-- Name Column -->
         <ng-container matColumnDef="titulo">
-        <th mat-header-cell *matHeaderCellDef> Titulo </th>
-        <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+            <th mat-header-cell *matHeaderCellDef> Titulo </th>
+            <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
         </ng-container>
     
         <!-- Weight Column -->
         <ng-container matColumnDef="paginas">
-        <th mat-header-cell *matHeaderCellDef> Paginas </th>
-        <td mat-cell *matCellDef="let element"> {{element.paginas}} </td>
+            <th mat-header-cell *matHeaderCellDef> Paginas </th>
+            <td mat-cell *matCellDef="let element"> {{element.paginas}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="autor">
-        <th mat-header-cell *matHeaderCellDef> Autor </th>
-        <td mat-cell *matCellDef="let element"> {{element.autor}} </td>
+            <th mat-header-cell *matHeaderCellDef> Autor </th>
+            <td mat-cell *matCellDef="let element"> {{element.autor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="reservado">
+            <th mat-header-cell *matHeaderCellDef> Reservado </th>
+            <td mat-cell *matCellDef="let element"> {{element.reservado}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef> Ações </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button type="button" mat-raised-button color="primary" style="text-align: center; margin-left: 20px;" [disabled]="element.reservado" (click)="reservar(element.titulo)">Reservar</button>
+            </td>
         </ng-container>
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

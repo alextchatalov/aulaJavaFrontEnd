@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SystemService } from '../system.service'
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { UsuarioLogado } from '../model/usuarioLogado';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
       (response) => {                           //Next callback
         console.warn(response);
         alert(response.message);
+        UsuarioLogado.nome = login.username;
         this.router.navigateByUrl('/home');
       },
       (error) => {                              //Error callback
